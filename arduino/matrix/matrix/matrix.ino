@@ -72,7 +72,7 @@ void leer_matrix() {
   for (uint8_t e = 0; e < n_e; e++) {
     digitalWrite(pin_e[e], LOW);
     for (uint8_t l = 0; l < n_l; l++) {
-      short m = n_l * e + l;
+      uint8_t m = n_e * l + e;
       matrix[m] = !digitalRead(pin_l[l]);
     }
     digitalWrite(pin_e[e], HIGH);
@@ -84,22 +84,14 @@ void leer_matrix() {
 void imprimir_matrix() {
   // Imprimir la matrix por la conexión serial.
 
-  short pulsado = 0;
   for (uint8_t l = 0; l < n_l; l++) {
     for (uint8_t e = 0; e < n_e; e++) {
-      short m = n_l * e + l;
-      Serial.print("OX"[short(matrix[m])]);
-      pulsado |= matrix[m];
+      uint8_t m = n_e * l + e;
+      Serial.print("OX"[uint8_t(matrix[m])]);
     }
     Serial.println();
   }
   Serial.println();
-  
-  if (pulsado) {
-    RXLED1;
-  } else {
-    RXLED0;
-  };
 }
 
 

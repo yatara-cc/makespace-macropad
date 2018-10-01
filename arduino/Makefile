@@ -5,8 +5,6 @@ PORT := /dev/ttyACM0
 DEVICE := leonardo
 
 
-all : upload sleep monitor
-
 build : src/$(TARGET) platformio.ini
 	platformio run -v -e $(DEVICE)
 
