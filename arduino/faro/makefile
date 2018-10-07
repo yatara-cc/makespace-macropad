@@ -2,4 +2,4 @@ TARGET := faro.ino
 
 all : upload
 
-include ../Makefile
+include ../arduino.makefile

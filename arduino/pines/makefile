@@ -2,4 +2,4 @@ TARGET := pines.ino
 
 all : upload sleep monitor
 
-include ../Makefile
+include ../arduino.makefile
