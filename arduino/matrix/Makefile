@@ -2,4 +2,4 @@ TARGET := matrix.ino
 
 all : upload sleep monitor
 
-include ../arduino.makefile
+include ../platformio-atmega32u4.Makefile

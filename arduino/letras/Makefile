@@ -2,6 +2,6 @@ TARGET := letras.ino
 
 all : upload
 
-include ../arduino.makefile
+include ../arduino.Makefile
 
 
